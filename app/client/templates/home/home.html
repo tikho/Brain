@@ -1,0 +1,25 @@
+<template name="Home">
+	<h1>Мозг</h1>
+  <div class="home">
+    <div class="container">
+    	<div class="col-md-4">
+	    	<p>Add Files</p>
+	    	<span class="btn btn-default btn-file">
+	    		<input multiple class="file fileInput" type="file"/>
+	    	</span>
+    	</div>
+    	<div class="col-md-8">
+			{{#each uploads}}
+				<span>
+					<img src="{{this.url}}" class="thumbnail" />
+					<a class="btn btn-primary" href="{{this.url download=true}}">Download</a>
+				</span>
+				<p>{{name}}</p>					
+			{{/each}}
+    	</div>
+    </div>
+  </div>
+  <div class="container">
+  	{{> IdeasFeed}}
+  </div>
+</template>

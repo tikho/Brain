@@ -1,0 +1,12 @@
+<template name="IdeasFeed">
+  <div class="ideas-feed">
+    {{#each ideas}}
+		<span>
+			<img src="{{image.url}}" class="thumbnail" />
+			<h2>{{title}}</h2>
+			<h3>{{description}}</h3>
+			<h4>{{tags}}</h4>
+		</span>
+    {{/each}}
+  </div>
+</template>
