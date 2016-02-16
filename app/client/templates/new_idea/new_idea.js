@@ -3,15 +3,19 @@
 /*****************************************************************************/
 Template.NewIdea.events({
 
+	'click .btn btn-primary btn-lg':function(){
+		console.log("modal-pressed");
+		$('#new-idea-tags').tagsinput();//refreshing tags-input
+	},
+
     'submit .js-add-new-idea':function() {
 
-        var title = event.target.new_idea_title.value;
-        var description = event.target.new_idea_description.value;
-        // var file = event.target.new_idea_file;
-        var tags = event.target.new_idea_tags.value;
-
-	    var files = event.target.new_idea_file.files;
-	    console.log(files);
+        var title = event.target.title.value;
+        var description = event.target.description.value;
+        var tags = event.target.tags.value;
+        var shownToEveryone = event.target.shownToEveryone;
+	    var files = event.target.file.files;
+	    
 	    for (var i = 0, ln = files.length; i < ln; i++) {
 	      console.log(event);
 	      Uploads.insert(files[i], function (err, fileObj) {
@@ -20,7 +24,9 @@ Template.NewIdea.events({
 		          description: description,
 		          dateCreated: new Date(),
 		          fileId: fileObj._id,
-		          tags: tags
+		          shownToEveryone: shownToEveryone, 
+		          tags: tags,
+		          createdBy: Meteor.user()._id
 		        });
 		        if (err){
 		        	console.log(err);
@@ -28,23 +34,6 @@ Template.NewIdea.events({
 	      	    console.log(Ideas.findOne({title: title}));
 	      	});
 	    }
-
-		// FS.Utility.eachFile(event, function(file) {
-		//   console.log(event);
-	 //      Uploads.insert(file, function (err, fileObj) {
-	 //      	    Ideas.insert({
-		//           title: title,
-		//           description: description,
-		//           dateCreated: new Date(),
-		//           fileId: fileObj._id,
-		//           tags: tags
-		//         });
-		//         if (err){
-		//         	console.log(err);
-		//         }
-	 //      	    console.log(Ideas.findOne({title: title}));
-	 //      	});
-	 //    });
 
 	    console.log("Okey, we passed upload.insert");
 

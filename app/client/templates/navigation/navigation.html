@@ -1,5 +1,20 @@
 <template name="Navigation">
   <div class="navigation">
-  	{{> NewIdea}}
+  	<div class="container">
+	  	<div class="row">
+		  	<div class="col-md-2">
+	  			<a href="{{pathFor route="Home"}}"><h1 class="logo">Мозг</h1></a>
+		  	</div>
+		  	<div class="col-md-4">
+		  		{{> Search}}
+		  	</div>
+		  	<div class="col-md-3">
+	  			{{> NewIdea}}
+		  	</div>
+		  	<div class="col-md-3 log-in">
+		  		{{> loginButtons}}
+		  	</div>
+	  	</div>
+  	</div>
   </div>
 </template>

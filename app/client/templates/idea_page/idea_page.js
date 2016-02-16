@@ -1,17 +1,13 @@
 /*****************************************************************************/
-/* IdeasFeed: Event Handlers */
+/* IdeaPage: Event Handlers */
 /*****************************************************************************/
-Template.IdeasFeed.events({
+Template.IdeaPage.events({
 });
 
 /*****************************************************************************/
-/* IdeasFeed: Helpers */
+/* IdeaPage: Helpers */
 /*****************************************************************************/
-Template.IdeasFeed.helpers({
-	ideas:function(){
-		return Ideas.find({}, {sort:{dateCreated: -1}, limit:Session.get("ideaLimit")});
-	},
-
+Template.IdeaPage.helpers({
 	image:function(){
 		var uploadedImage = Uploads.findOne({_id: this.fileId});
 		return uploadedImage;
@@ -23,28 +19,17 @@ Template.IdeasFeed.helpers({
 
 	tags:function(){
 		return this.tags;
-	},
-
-	creator:function(user_id){
-		var user = Meteor.users.findOne({_id:user_id});
-      	if (user){
-        	return user.username;
-      	}
-      	else {
-        	return "Anonymous";
-      	}
 	}
-
 });
 
 /*****************************************************************************/
-/* IdeasFeed: Lifecycle Hooks */
+/* IdeaPage: Lifecycle Hooks */
 /*****************************************************************************/
-Template.IdeasFeed.onCreated(function () {
+Template.IdeaPage.onCreated(function () {
 });
 
-Template.IdeasFeed.onRendered(function () {
+Template.IdeaPage.onRendered(function () {
 });
 
-Template.IdeasFeed.onDestroyed(function () {
+Template.IdeaPage.onDestroyed(function () {
 });

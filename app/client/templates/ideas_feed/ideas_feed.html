@@ -1,12 +1,14 @@
 <template name="IdeasFeed">
   <div class="ideas-feed">
     {{#each ideas}}
-		<span>
-			<img src="{{image.url}}" class="thumbnail" />
-			<h2>{{title}}</h2>
-			<h4>{{description}}</h4>
-			<h5>{{tags}}</h5>
-		</span>
+		<div class="ideas-feed idea">
+			<a href="/idea/{{_id}}">
+				<img src="{{image.url}}" class="ideasFeed-image thumbnail" />
+				<h2 class="ideasFeed title">{{title}}</h2>
+			</a>
+			<h4 class="ideasFeed description">{{description}}</h4>
+			<h8 class="ideasFeed creator">{{creator createdBy}}</h8>
+		</div>
     {{/each}}
   </div>
 </template>

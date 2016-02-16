@@ -2,4 +2,16 @@
 /* Navigation: Style */
 /*****************************************************************************/
 .navigation {
+	margin-bottom: 5vw;
+	border-bottom: 0.3px solid #ccc;
+	padding-bottom: 1vw;
+}
+
+.logo {
+	padding-top:5px;
+	font-size: 5vw;
+}
+
+.log-in{
+	padding-top: 60px;
 }

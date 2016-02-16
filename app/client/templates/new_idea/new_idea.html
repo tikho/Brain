@@ -1,9 +1,10 @@
 <template name="NewIdea">
   <div class="new-idea">
+  	{{#if currentUser}}
    	<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#addIdeaModal">
 	  Добавить мысль
 	</button>
-
+	{{/if}}
 
 	<div class="modal fade" id="addIdeaModal" tabindex="-1" role="dialog" aria-labelledby="addIdeaModalLabel">
 	  <div class="modal-dialog" role="document">
@@ -16,27 +17,26 @@
 	      <form class="form-horizontal js-add-new-idea">
 
 			  <div class="form-group">
-			    <label for="new-idea-title" class="col-sm-2 control-label">Название</label>
+			    <label for="title" class="col-sm-2 control-label">Название</label>
 			    <div class="col-sm-10">
-			      <input type="text" class="form-control" id="new-idea-title" name="new_idea_title" placeholder="{{new_idea_title_placeholder}}">
+			      <input type="text" class="form-control" id="new-idea-title" name="title" placeholder="">
 			    </div>
 			  </div>
 
 			  <div class="form-group">
 			    <label for="new-idea-description" class="col-sm-2 control-label">Описание</label>
 			    <div class="col-sm-10">
-			      <textarea class="form-control" rows="3" id="new-idea-description" name="new_idea_description" placeholder="{{new_idea_description_placeholder}}"></textarea>
+			      <textarea class="form-control" rows="3" id="new-idea-description" name="description" placeholder=""></textarea>
 			    </div>
 			  </div>
 
 			  <div class="form-group">
 			    <label for="new-idea-file" class="col-sm-2 control-label">Набросок</label>
 			    <div class="col-sm-10">
-<!-- 				    <input multiple type="file" class="fileInput" id="new-idea-file" name="new_idea_file"/>
-				    <p class="help-block">Картинка, видео или любой другой файл</p> -->
 					<span class="btn btn-default btn-file">
-		    		<input multiple name="new_idea_file" id="new-idea-file" class="file fileInput" type="file"/>
-	    	</span>
+			    		<input multiple name="file" id="file" class="file fileInput" type="file"/>
+			    		<p class="help-block">Картинка, видео или любой другой файл</p>
+	    			</span>
 				</div>
 			  </div>
 
@@ -44,14 +44,14 @@
 			  <div class="form-group">
 			    <label for="new-idea-tags" class="col-sm-2 control-label">Тэги</label>
 			    <div class="col-sm-10">
-				    <input type="text" data-role="tagsinput" id="new-idea-tags" class="bootstrap-tagsinput" name="new_idea_tags">
+				    <input type="text" data-role="tagsinput" id="new-idea-tags" class="bootstrap-tagsinput" name="tags">
 				    <p class="help-block">Вводить через запятую.</p>
 				</div>
-			  </div>		  
+			  </div>
 
 			  <div class="form-group">
 			    <div class="col-sm-offset-2 col-sm-10">
-			      <div class="checkbox">
+			      <div class="checkbox" name="shownToEveryone">
 			        <label>
 			          <input type="checkbox"> Не показывать публике
 			        </label>

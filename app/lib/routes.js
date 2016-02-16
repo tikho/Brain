@@ -6,7 +6,16 @@ Router.configure({
 
 
 Router.route('/', {
-  name: 'home',
+  name: 'Home',
   controller: 'HomeController',
   where: 'client'
+});
+
+Router.route('/idea/:_id', {
+  name: 'IdeaPage',
+  template: 'IdeaPage',
+  where: 'client',
+  data: function(){
+    return Ideas.findOne({_id:this.params._id});
+  }
 });

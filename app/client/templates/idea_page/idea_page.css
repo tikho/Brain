@@ -1,0 +1,20 @@
+/*****************************************************************************/
+/* IdeaPage: Style */
+/*****************************************************************************/
+.idea-page {
+
+}
+
+.center-content{
+	max-width: 60%
+	margin-left:auto;
+	margin-right:auto;
+	float:none;
+}
+
+.idea-page-image{
+	margin-left:auto;
+	margin-right:auto;
+	float:none;
+	border: none;
+}

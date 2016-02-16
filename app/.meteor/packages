@@ -23,3 +23,6 @@ cfs:standard-packages
 cfs:filesystem
 twbs:bootstrap
 cfs:gridfs
+accounts-password
+ian:accounts-ui-bootstrap-3
+ajduke:bootstrap-tagsinput
