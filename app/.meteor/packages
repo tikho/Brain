@@ -25,4 +25,5 @@ twbs:bootstrap
 cfs:gridfs
 accounts-password
 ian:accounts-ui-bootstrap-3
-ajduke:bootstrap-tagsinput
+ajduke:bootstrap-tagsinput@=0.5.0
+sergeyt:typeahead

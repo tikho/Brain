@@ -1,7 +1,15 @@
 <template name="Home">
   <div class="home">
 	  <div class="container">
-	  	{{> IdeasFeed}}
+	  	<div class="row">
+	  		<div class="col-md-9">
+
+	  			{{> IdeasFeed}}
+	  		</div>
+	  		<div class="col-md-3">
+	  			{{> Personal}}
+	  		</div>
+	  	</div>
 	  </div>
   </div>
 </template>
